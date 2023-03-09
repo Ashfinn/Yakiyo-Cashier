@@ -10,9 +10,12 @@ def purchase ():
     y = text.split()
     code = input()
     for i in range(len(y)):
+        counter = 0
         if y[i] == code:
-            print(y[i+1] + " " + y[i+2])
-
+            return print(y[i+1] + " " + y[i+2])
+            counter+=1
+    if counter < 1:
+        return print("Item not found")
 
 if x == "1":
       purchase()
