@@ -1,16 +1,17 @@
-'''
 print("1. Start Purchasing")
 print("2. Show available stock")
 print("3. Exit")
 
 x = input()
-
-     
+   
 def purchase ():  
     print("Enter the item code")
+    text = open("item.txt", "r").read()
+    y = text.split()
     code = input()
-    for line in open("item.txt", "r").readlines():
-                    print(code)
+    for i in range(len(y)):
+        if y[i] == code:
+            print(y[i+1] + " " + y[i+2])
 
 
 if x == "1":
@@ -24,10 +25,4 @@ if x == "2":
 
 if x == "3":
     exit()
-'''
-text = open("item.txt", "r").read()
-code = input()
-index = text.find(code)
-for line in text.split("\n"):
-    print(line[index:])
-  
+
